@@ -1,0 +1,24 @@
+
+// Este es el Config se creo 
+// Todo debe ir en minusculas
+
+
+{
+    "compilerOptions": {
+      "outDir": "./dist",
+      "rootDir": "./src",
+      "module": "NodeNext",
+      "target": "ES6",
+      "lib": ["ES6"],
+      "moduleResolution":"NodeNext",
+      "strict": false,
+      "sourceMap": true,
+      "esModuleInterop": true,
+      "declaration": true,
+      "experimentalDecorators":true,
+      "emitDecoratorMetadata":true,
+      "isolatedModules":true
+      
+    },
+    "include": ["src/**/*.ts"]
+  }
