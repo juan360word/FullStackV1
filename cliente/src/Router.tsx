@@ -4,7 +4,7 @@ import Layout from "./layouts/Layout";
 import Productos from "./pages/Productos";
 import NuevosProductos from "./pages/NuevosProductos";
 import { action as newProducAction } from "./pages/NuevosProductos";
-
+import { Loader as ProductoLoader } from "./pages/Productos";
 
 export const Router = createBrowserRouter([
     {
@@ -13,7 +13,8 @@ export const Router = createBrowserRouter([
         children:[
             {
                 index:true,
-                element:<Productos/>
+                element:<Productos/>,
+                loader: ProductoLoader
             },
             {
                 path:'Productos/nuevos',

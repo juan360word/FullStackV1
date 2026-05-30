@@ -1,5 +1,5 @@
 
-import { Link, useActionData } from "react-router-dom"
+import { Link, useActionData ,redirect} from "react-router-dom"
 import type { ActionFunctionArgs } from "react-router-dom"
 import { Form } from "react-router-dom"
 import ErrorMsg from "../components/ErrorMsg"
@@ -20,8 +20,8 @@ export async function action({request}: ActionFunctionArgs) {
         return error
     }
 
-    addProducto(data)
-    return {} //  siempre poner esto
+   await addProducto(data)
+    return redirect('/') //  siempre poner esto
 }
 
 
@@ -29,8 +29,6 @@ const NuevosProductos = () => {
 
     const error = useActionData()
     console.log(error)
-
-
 
 
     return (

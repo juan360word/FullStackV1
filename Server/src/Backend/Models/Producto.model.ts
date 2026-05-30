@@ -14,9 +14,9 @@ class Productos extends Model{
     declare name:String
 
     @Column({
-        type:DataType.DECIMAL(4,2)
+        type:DataType.DECIMAL(10,2)
     })
-    declare Price:number
+    declare price:number
     @Default(true)
 
     @Column({

@@ -4,7 +4,7 @@
   "description": "Uso de TypeScript, Node.Js, Express",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec ts-node src/index.ts",
+    "dev": "nodemon --exec 'kill -9 $(lsof -t -i:3689) 2>/dev/null; ts-node src/index.ts' src/**/*.ts",
     "test": "jest --detectOpenHandles",
     "test:coverage": "npm run pretest && jest --detectOpenHandles --coverage",
     "pretest": "ts-node ./src/Data/dataindex.ts --clear"
@@ -12,6 +12,7 @@
   "author": "Juan David serrato",
   "license": "ISC",
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^4.17.21",
     "@types/jest": "^30.0.0",
     "@types/node": "^20.0.0",
@@ -27,9 +28,12 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "@types/morgan": "^1.9.10",
+    "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^4.18.2",
     "express-validator": "^7.3.2",
+    "morgan": "^1.10.1",
     "mysql2": "^3.22.3",
     "reflect-metadata": "^0.2.2",
     "sequelize": "^6.37.8",

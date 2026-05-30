@@ -44,7 +44,7 @@ export  const createProductos = async (req: Request,res: Response) => {
     // Validacion
 
     await check('name').notEmpty().withMessage('Ingrese algo , No puede ir vacio ').run(req)
-    await check('Price').isNumeric().withMessage('Tiene que ir un numero')
+    await check('price').isNumeric().withMessage('Tiene que ir un numero')
                         .notEmpty().withMessage('Ingrese algo , No puede ir vacio ')
                         .custom(value => value > 0).withMessage('No puede ir negativo')
                         .run(req)
@@ -54,7 +54,8 @@ export  const createProductos = async (req: Request,res: Response) => {
         const Producto = await Productos.create(req.body)
           res.status(201).json({data: Producto})
     } catch (error) {
-        
+        console.log(error)
+        res.status(500).json({ error: 'Error al crear el producto' })
     }
   
 }

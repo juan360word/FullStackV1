@@ -1,5 +1,12 @@
 import { Link} from "react-router-dom"
+import { GetProductos } from "../services/ProducoService"
 
+export async function Loader() {
+  
+  await GetProductos()
+
+  return null
+}
 
 const Productos = () => {
   return (
