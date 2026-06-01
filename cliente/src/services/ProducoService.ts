@@ -71,11 +71,11 @@ export async function GetProductosID(id:Producto['id']) {
 
 export async function EditarProductoss(data: PropsProductoAdd, id: Producto['id']) {
     try {
-        const url = `${import.meta.env.VITE_API_URL}/api/products/${id}`
+        const url = (`${import.meta.env.VITE_API_URL}/api/products/${id}`)
         console.log('Enviando PUT:', url, data)
         await axios.put(url, {
             name: data.name,
-            price: +data.price,
+            price: +data.price.replace(/\./g, ''),
             valido: data.valido === 'true'
         })
     } catch (error) {

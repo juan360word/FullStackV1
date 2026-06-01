@@ -5,7 +5,7 @@ import ErrorMsg from "../components/ErrorMsg"
 import {  DisponibilidadProducto, Eliminar, GetProductosID } from "../services/ProducoService"
 import type { Producto } from "../types"
 import { EditarProductoss } from "../services/ProducoService"
-import Productos from "./Productos"
+
 
 export async function Loader({ params }: LoaderFunctionArgs) {
     if (params.id !== undefined) {

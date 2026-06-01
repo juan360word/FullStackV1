@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec 'kill -9 $(lsof -t -i:3689) 2>/dev/null; ts-node src/index.ts' src/**/*.ts",
+    "build": "tsc -b && node dist/index.js",
     "test": "jest --detectOpenHandles",
     "test:coverage": "npm run pretest && jest --detectOpenHandles --coverage",
     "pretest": "ts-node ./src/Data/dataindex.ts --clear"
